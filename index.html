@@ -3,14 +3,22 @@
     <head>
         <title>Tính diện tích và chu vi</title>
         <style>
-            *{
+            * {
                 text-align: center;
             }
-            h1{
-                margin-top: 20px;
+            h1 {
+                margin-top: 50px;
+            }
+            .container {
+                margin: 20px auto;
+                padding: 20px;
+                width: 300px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                background-color: #f9f9f9;
             }
             form {
-                margin: 20px;
+                margin: 20px 0;
             }
             label {
                 margin-right: 10px;
@@ -25,17 +33,19 @@
     </head>
     <body>
         <h1>Tính diện tích và chu vi</h1>
-        <form id="loaiHinh">
-            <label for="hinh">Chọn hình bạn muốn tính:</label>
-            <select id="hinh" name="hinh" onchange="hienCanh()">
-                <option value="vuong">Hình vuông</option>
-                <option value="chunhat">Hình chữ nhật</option>
-                <option value="tron">Hình tròn</option>
-            </select>
-            <div id="canh"></div>
-            <button type="button" onclick="tinh()">Tính</button>
-        </form>
-        <div id="ketqua"></div>
+        <div class="container">
+            <form id="loaiHinh">
+                <label for="hinh">Chọn hình bạn muốn tính:</label>
+                <select id="hinh" name="hinh" onchange="hienCanh()">
+                    <option value="vuong">Hình vuông</option>
+                    <option value="chunhat">Hình chữ nhật</option>
+                    <option value="tron">Hình tròn</option>
+                </select>
+                <div id="canh"></div>
+                <button type="button" onclick="tinh()">Tính</button>
+            </form>
+            <div id="ketqua"></div>
+        </div>
         <script>
             function hienCanh() {
                 var hinh = document.getElementById("hinh").value;
